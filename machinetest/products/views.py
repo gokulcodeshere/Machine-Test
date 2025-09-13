@@ -4,8 +4,8 @@ from .forms import ProductForm
 
 def product_list(request):
     products = Product.objects.all()
-    stock_value = sum([p.find_total_value() for p in products])
-    return render(request, 'products/product_list.html', {'products': products, 'stock_value': stock_value})        
+    total_stock_value = sum([p.price * p.stock for p in products])
+    return render(request, 'products/product_list.html', {'products': products, 'total_stock_value': total_stock_value})        
 
 def add_product(request):
     if request.method == 'POST':

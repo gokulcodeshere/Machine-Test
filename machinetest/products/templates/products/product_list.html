@@ -17,14 +17,18 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Category: {{ product.category }} <br> 
-                    Price: Rs{{ product.price }} <br>
+                    Price: Rs {{ product.price }} <br>
                     Stock: {{ product.stock }} <br> 
-                    Total Value: Rs{{ product.find_total_value }}</p>
+                    Total Value: Rs {{ product.find_total_value }}</p>
                     </p>
                 </div>
             </div>  
         </div>
         {% endfor %}
+    </div>
+
+    <div class="mt-4">
+        <h3>Total Stock Value: Rs {{ total_stock_value }}</h3>
     
 </body>
 </html>
